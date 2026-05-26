@@ -11,6 +11,8 @@ import htmlIcon from '../../../assets/icons/skill-html.svg';
 import mysqlIcon from '../../../assets/icons/skill-mysql.svg';
 import nodeIcon from '../../../assets/icons/skill-node.svg';
 import javaIcon from '../../../assets/icons/skill-java.svg';
+import gitIcon from '../../../assets/icons/skill-git.svg';
+import javascriptIcon from '../../../assets/icons/skill-javascript.svg';
 import knockoutIcon from '../../../assets/icons/skill-knockout.svg';
 import obdxIcon from '../../../assets/icons/skill-obdx.svg';
 import oracleIcon from '../../../assets/icons/skill-oracle.svg';
@@ -37,6 +39,8 @@ const skillIcons = {
   'Cascading Style Sheets (CSS)': cssIcon,
   'Distributed Systems': systemIcon,
   HTML5: htmlIcon,
+  GIT: gitIcon,
+  Javascript: javascriptIcon,
   'MERN Stack': reactIcon,
   'Microservices Architecture': systemIcon,
   MySQL: mysqlIcon,
@@ -63,6 +67,7 @@ const experienceGroups = [
     status: 'Current workplace',
     timelineNote: 'Currently working at Techlogix',
     imageHint: 'Techlogix workplace image',
+    placement: 'card-left',
     photos: [techlogixPhotoOne],
     roles: [
       {
@@ -108,6 +113,7 @@ const experienceGroups = [
     status: 'Previous role',
     timelineNote: 'Worked Sep 2025 - Apr 2026',
     imageHint: 'Glowingsoft office or team image',
+    placement: 'card-right',
     photos: [glowingsoftPhoto],
     roles: [
       {
@@ -135,6 +141,7 @@ const experienceGroups = [
     status: 'Trainee role',
     timelineNote: 'Worked Aug 2025 - Sep 2025',
     imageHint: 'SolutionInn office or team image',
+    placement: 'card-left',
     photos: [solutioninnPhoto],
     roles: [
       {
@@ -255,21 +262,21 @@ export function ExperienceSection() {
       </div>
 
       <div className="experience-timeline">
-        {experienceGroups.map((group, index) => (
+        {experienceGroups.map((group) => (
           <article
-            className={`experience-group ${index % 2 === 0 ? 'is-left' : 'is-right'}`}
+            className={`experience-group ${group.placement === 'card-left' ? 'is-left' : 'is-right'}`}
             key={group.company}
           >
-            <div className={`experience-side left-side ${index % 2 === 0 ? 'is-card' : 'is-media'}`}>
-              {index % 2 === 0 ? renderCard(group) : renderPhotos(group)}
+            <div className={`experience-side left-side ${group.placement === 'card-left' ? 'is-card' : 'is-media'}`}>
+              {group.placement === 'card-left' ? renderCard(group) : renderPhotos(group)}
             </div>
 
             <button className="timeline-marker" type="button" data-tooltip={group.timelineNote}>
               <span />
             </button>
 
-            <div className={`experience-side right-side ${index % 2 === 0 ? 'is-media' : 'is-card'}`}>
-              {index % 2 === 0 ? renderPhotos(group) : renderCard(group)}
+            <div className={`experience-side right-side ${group.placement === 'card-left' ? 'is-media' : 'is-card'}`}>
+              {group.placement === 'card-left' ? renderPhotos(group) : renderCard(group)}
             </div>
           </article>
         ))}
