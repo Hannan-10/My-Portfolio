@@ -1,0 +1,5 @@
+:root {
+  --font-sans: Inter, "Segoe UI", Avenir, Helvetica, Arial, sans-serif;
+  --font-display: "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-mono: "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
