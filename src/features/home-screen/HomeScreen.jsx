@@ -1,5 +1,6 @@
 import React from 'react';
 import { AboutSection } from './components/AboutSection.jsx';
+import { EducationSection } from './components/EducationSection.jsx';
 import { ExperienceSection } from './components/ExperienceSection.jsx';
 import { HeaderNav } from './components/HeaderNav.jsx';
 import { HeroIntro } from './components/HeroIntro.jsx';
@@ -17,6 +18,7 @@ export function HomeScreen() {
       </ScreenShell>
       <AboutSection />
       <ExperienceSection />
+      <EducationSection />
     </main>
   );
 }
