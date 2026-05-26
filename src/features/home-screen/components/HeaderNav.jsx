@@ -1,14 +1,11 @@
 import React from 'react';
-import logo from '../../../assets/icons/brand-mark.svg';
 
 const navItems = ['About', 'Experience', 'Education', 'Projects', 'Skills'];
 
 export function HeaderNav() {
   return (
     <header className="header-nav">
-      <a className="brand-link" href="#home" aria-label="Portfolio home">
-        <img src={logo} alt="" />
-      </a>
+      <span className="brand-spacer" aria-hidden="true" />
 
       <nav className="nav-links" aria-label="Primary navigation">
         {navItems.map((item) => (
