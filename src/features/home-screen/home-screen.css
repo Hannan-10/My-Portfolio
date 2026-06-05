@@ -44,7 +44,9 @@
   align-items: center;
   gap: clamp(16px, 2vw, 32px);
   color: #fff;
-  font-size: clamp(0.76rem, 0.82vw, 0.96rem);
+  font-family: var(--font-display);
+  font-size: clamp(0.92rem, 1vw, 1.12rem);
+  font-style: italic;
   font-weight: 900;
   line-height: 1;
 }
@@ -65,7 +67,8 @@
   border-radius: 999px;
   background: #fff;
   color: #000;
-  font-size: 0.78rem;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
   font-weight: 900;
   text-align: center;
   text-transform: uppercase;
