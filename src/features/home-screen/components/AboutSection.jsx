@@ -51,7 +51,7 @@ export function AboutSection() {
           </a>
         </div>
 
-        <div className="contact-panel" id="contact" aria-label="Contact details">
+        <div className="contact-panel" aria-label="Contact details">
           {contactLinks.map((link) => (
             <a key={link.label} className="contact-link" href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel={link.href.startsWith('http') ? 'noreferrer' : undefined}>
               <span className="contact-icon">
