@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import emailIcon from '../../../assets/icons/email.svg';
 
 const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 
@@ -73,9 +72,7 @@ export function ContactSection() {
           start the conversation.
         </p>
         <a className="direct-email-link" href="mailto:hannan11862@gmail.com">
-          <span>
-            <img src={emailIcon} alt="" />
-          </span>
+          <span aria-hidden="true">@</span>
           hannan11862@gmail.com
         </a>
       </div>
