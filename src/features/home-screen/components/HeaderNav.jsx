@@ -1,6 +1,6 @@
 import React from 'react';
 
-const navItems = ['About', 'Experience', 'Education', 'Projects', 'Skills'];
+const navItems = ['About', 'Experience', 'Education', 'Projects', 'Skills', 'Recommendations'];
 
 export function HeaderNav() {
   return (

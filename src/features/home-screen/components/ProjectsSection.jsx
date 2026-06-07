@@ -134,7 +134,7 @@ const projects = [
   {
     name: 'TechHaveli',
     domain: 'E-commerce Application',
-    date: '2023',
+    date: 'Dec 2025 - Jan 2026',
     categories: ['Web Stack'],
     description: [
       'Built a full-stack e-commerce platform using the MERN stack for online electronics and gadget sales.',
