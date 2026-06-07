@@ -7,6 +7,7 @@ import { HeaderNav } from './components/HeaderNav.jsx';
 import { HeroIntro } from './components/HeroIntro.jsx';
 import { HeroPortrait } from './components/HeroPortrait.jsx';
 import { ProjectsSection } from './components/ProjectsSection.jsx';
+import { ClosingSection } from './components/ClosingSection.jsx';
 import { RecommendationsSection } from './components/RecommendationsSection.jsx';
 import { SkillsSection } from './components/SkillsSection.jsx';
 import { ScreenShell } from './components/ScreenShell.jsx';
@@ -27,6 +28,7 @@ export function HomeScreen() {
       <ProjectsSection />
       <RecommendationsSection />
       <ContactSection />
+      <ClosingSection />
     </main>
   );
 }
