@@ -2079,13 +2079,13 @@
 }
 
 .rec-name-link {
-  font-family: var(--font-sans);
-  font-size: clamp(1rem, 1.1vw, 1.1rem);
-  font-weight: 800;
-  color: #111;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  font-weight: 900;
+  color: #0a0a0a;
   text-decoration: none;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
+  letter-spacing: -0.01em;
   transition: color 180ms ease;
 }
 
@@ -2225,6 +2225,8 @@
   .nav-links {
     overflow-x: auto;
     scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 72%, transparent 100%);
+    mask-image: linear-gradient(90deg, #000 72%, transparent 100%);
   }
 
   .nav-links::-webkit-scrollbar {
@@ -2232,16 +2234,16 @@
   }
 
   .nav-links a {
-    min-height: 36px;
-    padding-inline: 12px;
-    font-size: 0.9rem;
+    min-height: 34px;
+    padding-inline: 9px;
+    font-size: 0.8rem;
   }
 
   .contact-button {
-    min-height: 42px;
-    min-width: 86px;
-    padding-inline: 15px;
-    font-size: 0.74rem;
+    min-height: 40px;
+    min-width: 76px;
+    padding-inline: 12px;
+    font-size: 0.72rem;
   }
 
   .hero-intro {
