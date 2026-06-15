@@ -320,13 +320,25 @@ function projectMatchesFilter(project, activeFilter) {
   return activeFilter === 'All Projects' || project.categories.includes(activeFilter);
 }
 
+const INITIAL_COUNT = 4;
+
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('All Projects');
+  const [showAll, setShowAll] = useState(false);
+
   const showFeaturedProject = projectMatchesFilter(featuredProject, activeFilter);
   const visibleProjects = useMemo(
     () => projects.filter((project) => projectMatchesFilter(project, activeFilter)),
     [activeFilter],
   );
+
+  const displayedProjects = showAll ? visibleProjects : visibleProjects.slice(0, INITIAL_COUNT);
+  const hasMore = !showAll && visibleProjects.length > INITIAL_COUNT;
+
+  function handleFilterChange(filter) {
+    setActiveFilter(filter);
+    setShowAll(false);
+  }
 
   return (
     <section className="projects-section" id="projects" aria-labelledby="projects-title">
@@ -341,7 +353,7 @@ export function ProjectsSection() {
             className={activeFilter === filter ? 'is-active' : ''}
             key={filter}
             type="button"
-            onClick={() => setActiveFilter(filter)}
+            onClick={() => handleFilterChange(filter)}
           >
             {filter}
           </button>
@@ -374,7 +386,7 @@ export function ProjectsSection() {
       )}
 
       <div className="project-compact-grid">
-        {visibleProjects.map((project) => (
+        {displayedProjects.map((project) => (
           <article className="compact-project" key={project.name}>
             <h3>{project.name}</h3>
             <ProjectMeta domain={project.domain} date={project.date} />
@@ -391,6 +403,19 @@ export function ProjectsSection() {
           </article>
         ))}
       </div>
+
+      {hasMore && (
+        <div className="view-all-projects-row">
+          <button
+            className="view-all-projects-btn"
+            type="button"
+            onClick={() => setShowAll(true)}
+          >
+            View All Projects
+            <span className="view-all-count">+{visibleProjects.length - INITIAL_COUNT} more</span>
+          </button>
+        </div>
+      )}
     </section>
   );
 }
