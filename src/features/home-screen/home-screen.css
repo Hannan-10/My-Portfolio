@@ -1388,14 +1388,16 @@
 .view-all-projects-btn {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 14px 32px;
   border: 1.5px solid #d0d5dd;
   border-radius: 8px;
   background: #fff;
   color: #111;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  font-weight: 700;
   cursor: pointer;
   transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
 }
@@ -1412,18 +1414,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 2px 9px;
-  border-radius: 20px;
-  background: #f2f4f7;
+  padding: 3px 10px;
+  border-radius: 4px;
+  border: 1.5px solid #c8cdd6;
+  background: transparent;
   color: #555;
-  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-style: normal;
   font-weight: 600;
-  transition: background 200ms ease, color 200ms ease;
+  letter-spacing: 0.04em;
+  transition: border-color 200ms ease, color 200ms ease;
 }
 
 .view-all-projects-btn:hover .view-all-count {
-  background: rgb(255 255 255 / 18%);
-  color: #fff;
+  border-color: rgb(255 255 255 / 35%);
+  color: rgb(255 255 255 / 80%);
 }
 
 .contact-form-section {
