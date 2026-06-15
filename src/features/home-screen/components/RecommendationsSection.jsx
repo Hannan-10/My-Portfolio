@@ -221,7 +221,10 @@ export function RecommendationsSection() {
             {/* Cards grid */}
             <div
               className="rec-group-grid"
-              style={{ gridTemplateColumns: gridCols(group.members.length) }}
+              style={{
+                gridTemplateColumns: gridCols(group.members.length),
+                ...(group.members.length === 1 && { justifyContent: 'center' }),
+              }}
             >
               {group.members.map((rec, memberIndex) => {
                 const myIndex = cardRefIndex++;
