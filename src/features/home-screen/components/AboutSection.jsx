@@ -1,6 +1,6 @@
 import React from 'react';
 import resume from '../../../assets/documents/resume.pdf';
-import emailIcon from '../../../assets/icons/email.svg';
+import emailIcon from '../../../assets/icons/gmail.svg';
 import githubIcon from '../../../assets/icons/github.svg';
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
 import phoneIcon from '../../../assets/icons/phone.svg';
