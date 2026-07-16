@@ -324,6 +324,77 @@
   font-weight: 800;
 }
 
+/* ── Entrance: About ── */
+
+.about-copy,
+.contact-panel {
+  opacity: 0;
+  transform: translateY(36px);
+}
+
+:where(.about-section--visible) .about-copy,
+:where(.about-section--visible) .contact-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:where(.about-section--visible) .about-copy {
+  animation: aboutPanelIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:where(.about-section--visible) .contact-panel {
+  animation: aboutPanelIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 160ms;
+}
+
+@keyframes aboutPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-link {
+  opacity: 0;
+}
+
+:where(.about-section--visible) .contact-link {
+  opacity: 1;
+  animation: consoleLineIn 0.55s ease;
+}
+
+:where(.about-section--visible) .contact-link:nth-child(1) {
+  animation-delay: 420ms;
+}
+
+:where(.about-section--visible) .contact-link:nth-child(2) {
+  animation-delay: 500ms;
+}
+
+:where(.about-section--visible) .contact-link:nth-child(3) {
+  animation-delay: 580ms;
+}
+
+:where(.about-section--visible) .contact-link:nth-child(4) {
+  animation-delay: 660ms;
+}
+
+@keyframes consoleLineIn {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .experience-section {
   width: min(100%, 1720px);
   padding: clamp(56px, 8vw, 104px) clamp(10px, 2vw, 32px);
@@ -486,6 +557,98 @@
 .timeline-marker:focus-visible {
   outline: 3px solid #7dd3fc;
   outline-offset: 4px;
+}
+
+/* ── Entrance: Experience (git-graph reveal) ── */
+
+.experience-timeline::before {
+  transform: translateX(-50%) scaleY(0);
+  transform-origin: top;
+}
+
+:where(.experience-section--visible) .experience-timeline::before {
+  transform: translateX(-50%) scaleY(1);
+  transition: transform 1.15s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.experience-side {
+  opacity: 0;
+}
+
+.left-side {
+  --side-offset: -56px;
+}
+
+.right-side {
+  --side-offset: 56px;
+}
+
+:where(.experience-section--visible) .experience-side {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+:where(.experience-section--visible) .experience-group:nth-child(1) .experience-side {
+  animation: expSideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 150ms;
+}
+
+:where(.experience-section--visible) .experience-group:nth-child(2) .experience-side {
+  animation: expSideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 600ms;
+}
+
+:where(.experience-section--visible) .experience-group:nth-child(3) .experience-side {
+  animation: expSideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 1050ms;
+}
+
+@keyframes expSideIn {
+  from {
+    opacity: 0;
+    transform: translateX(var(--side-offset, 0));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-marker {
+  opacity: 0;
+  transform: scale(0.3);
+}
+
+:where(.experience-section--visible) .timeline-marker {
+  opacity: 1;
+  transform: scale(1);
+}
+
+:where(.experience-section--visible) .experience-group:nth-child(1) .timeline-marker {
+  animation: markerPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 460ms;
+}
+
+:where(.experience-section--visible) .experience-group:nth-child(2) .timeline-marker {
+  animation: markerPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 910ms;
+}
+
+:where(.experience-section--visible) .experience-group:nth-child(3) .timeline-marker {
+  animation: markerPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 1360ms;
+}
+
+@keyframes markerPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .group-card {
@@ -998,6 +1161,42 @@
   filter: none;
 }
 
+/* ── Entrance: Education ── */
+
+.education-card {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+:where(.education-section--visible) .education-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:where(.education-section--visible) .education-card:nth-child(1) {
+  animation: eduCardIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+}
+
+:where(.education-section--visible) .education-card:nth-child(2) {
+  animation: eduCardIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 320ms;
+}
+
+:where(.education-section--visible) .education-card:nth-child(3) {
+  animation: eduCardIn 0.75s cubic-bezier(0.16, 1, 0.3, 1) 540ms;
+}
+
+@keyframes eduCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .projects-section {
   width: min(100%, 1495px);
   padding: clamp(56px, 8vw, 104px) clamp(22px, 5vw, 86px);
@@ -1379,6 +1578,55 @@
   transform: translateX(4px);
 }
 
+/* ── Entrance: Projects ── */
+
+.featured-project {
+  opacity: 0;
+  transform: translateY(48px) scale(0.97);
+}
+
+:where(.projects-section--visible) .featured-project {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: featuredProjectIn 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes featuredProjectIn {
+  from {
+    opacity: 0;
+    transform: translateY(48px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.compact-project {
+  opacity: 0;
+  transform: translateY(40px) scale(0.94);
+}
+
+:where(.projects-section--visible) .compact-project {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: compactProjectIn 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  animation-delay: calc(var(--i, 0) * 110ms);
+}
+
+@keyframes compactProjectIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .view-all-projects-row {
   display: flex;
   justify-content: center;
@@ -1499,6 +1747,40 @@
 
 .direct-email-link span img {
   filter: invert(1);
+}
+
+/* ── Entrance: Contact ── */
+
+.contact-form-copy,
+.contact-form {
+  opacity: 0;
+  transform: translateY(36px);
+}
+
+:where(.contact-form-section--visible) .contact-form-copy,
+:where(.contact-form-section--visible) .contact-form {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:where(.contact-form-section--visible) .contact-form-copy {
+  animation: contactPanelIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:where(.contact-form-section--visible) .contact-form {
+  animation: contactPanelIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 160ms;
+}
+
+@keyframes contactPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .contact-form {
@@ -1706,6 +1988,32 @@
   height: 62px;
 }
 
+/* ── Entrance: Skills ── */
+
+.skill-card {
+  opacity: 0;
+  transform: translateY(28px) scale(0.92);
+}
+
+:where(.skills-section--visible) .skill-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: skillCardIn 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  animation-delay: calc(var(--i, 0) * 55ms);
+}
+
+@keyframes skillCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .capability-panel {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1753,6 +2061,65 @@
   color: #2e2e2e;
   font-size: 0.9rem;
   font-weight: 900;
+}
+
+/* ── Entrance: Capability rings (progress-fill) ── */
+
+@property --value {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.capability-ring {
+  --value: 0;
+  opacity: 0;
+  transform: translateY(24px) scale(0.92);
+  transition: --value 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:where(.skills-section--visible) .capability-ring {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  --value: var(--ring-target);
+  animation: capabilityRingIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:where(.skills-section--visible) .capability-ring:nth-child(1) {
+  animation-delay: 80ms;
+  transition-delay: 80ms;
+}
+
+:where(.skills-section--visible) .capability-ring:nth-child(2) {
+  animation-delay: 160ms;
+  transition-delay: 160ms;
+}
+
+:where(.skills-section--visible) .capability-ring:nth-child(3) {
+  animation-delay: 240ms;
+  transition-delay: 240ms;
+}
+
+:where(.skills-section--visible) .capability-ring:nth-child(4) {
+  animation-delay: 320ms;
+  transition-delay: 320ms;
+}
+
+:where(.skills-section--visible) .capability-ring:nth-child(5) {
+  animation-delay: 400ms;
+  transition-delay: 400ms;
+}
+
+@keyframes capabilityRingIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ─── Recommendations Section ─────────────────────────────────────────── */
