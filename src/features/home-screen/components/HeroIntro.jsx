@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import emailIcon from '../../../assets/icons/email.svg';
+import emailIcon from '../../../assets/icons/gmail.svg';
 import githubIcon from '../../../assets/icons/github.svg';
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
 
