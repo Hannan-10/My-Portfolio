@@ -1497,6 +1497,10 @@
   box-shadow: 0 7px 18px rgb(0 0 0 / 16%);
 }
 
+.direct-email-link span img {
+  filter: invert(1);
+}
+
 .contact-form {
   display: grid;
   gap: 18px;
