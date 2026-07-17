@@ -4,6 +4,7 @@ import emailIcon from '../../../assets/icons/gmail.svg';
 import githubIcon from '../../../assets/icons/github.svg';
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
 import phoneIcon from '../../../assets/icons/phone.svg';
+import upworkIcon from '../../../assets/icons/upwork.svg';
 
 const contactLinks = [
   {
@@ -25,8 +26,14 @@ const contactLinks = [
     icon: linkedinIcon,
   },
   {
+    label: 'Upwork',
+    value: 'Hannan Fareed',
+    href: 'https://www.upwork.com/freelancers/~018cfc1df536ef5df9?mp_source=share',
+    icon: upworkIcon,
+  },
+  {
     label: 'Phone',
-    value: '03364611862',
+    value: '+92 3364611862',
     href: 'tel:+923364611862',
     icon: phoneIcon,
   },

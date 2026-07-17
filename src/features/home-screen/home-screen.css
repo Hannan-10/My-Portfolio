@@ -383,6 +383,10 @@
   animation-delay: 660ms;
 }
 
+:where(.about-section--visible) .contact-link:nth-child(5) {
+  animation-delay: 740ms;
+}
+
 @keyframes consoleLineIn {
   from {
     opacity: 0;
@@ -1636,7 +1640,7 @@
 .view-all-projects-btn {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   padding: 14px 32px;
   border: 1.5px solid #d0d5dd;
   border-radius: 8px;
@@ -1647,7 +1651,7 @@
   font-style: italic;
   font-weight: 700;
   cursor: pointer;
-  transition: border-color 200ms ease, background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  transition: border-color 200ms ease, background 200ms ease, color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
 }
 
 .view-all-projects-btn:hover {
@@ -1662,23 +1666,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 3px 11px;
+  padding: 5px 13px;
   border-radius: 999px;
-  border: 1.5px solid #3d3d3d;
-  background: #111;
-  color: #fff;
+  border: 1.5px solid currentColor;
+  color: inherit;
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-style: normal;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: background 200ms ease, color 200ms ease, border-color 200ms ease;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  opacity: 0.72;
+  transition: opacity 200ms ease;
 }
 
 .view-all-projects-btn:hover .view-all-count {
-  background: #fff;
-  color: #111;
-  border-color: #d0d5dd;
+  opacity: 0.92;
 }
 
 .contact-form-section {

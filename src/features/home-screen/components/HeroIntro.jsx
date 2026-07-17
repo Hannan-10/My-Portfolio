@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import emailIcon from '../../../assets/icons/gmail.svg';
 import githubIcon from '../../../assets/icons/github.svg';
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
+import upworkIcon from '../../../assets/icons/upwork.svg';
 
 const socialLinks = [
   { label: 'Email', href: 'mailto:hannan11862@gmail.com', icon: emailIcon },
   { label: 'GitHub', href: 'https://github.com/Hannan-10', icon: githubIcon },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/hannan-fareed/', icon: linkedinIcon },
+  { label: 'Upwork', href: 'https://www.upwork.com/freelancers/~018cfc1df536ef5df9?mp_source=share', icon: upworkIcon },
 ];
 
 const titles = ['Software Engineer', 'Full Stack Developer', 'Mobile App Developer'];
