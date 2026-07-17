@@ -10,6 +10,7 @@ import { ProjectsSection } from './components/ProjectsSection.jsx';
 import { ClosingSection } from './components/ClosingSection.jsx';
 import { RecommendationsSection } from './components/RecommendationsSection.jsx';
 import { SkillsSection } from './components/SkillsSection.jsx';
+import { VideoSection } from './components/VideoSection.jsx';
 import { ScreenShell } from './components/ScreenShell.jsx';
 import './home-screen.css';
 
@@ -28,6 +29,7 @@ export function HomeScreen() {
       <ProjectsSection />
       <RecommendationsSection />
       <ContactSection />
+      <VideoSection />
       <ClosingSection />
     </main>
   );
