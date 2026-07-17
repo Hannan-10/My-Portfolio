@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import calendarIcon from '../../../assets/icons/calendar.svg';
 import githubIcon from '../../../assets/icons/github.svg';
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
@@ -325,6 +325,27 @@ const INITIAL_COUNT = 4;
 export function ProjectsSection() {
   const [activeFilter, setActiveFilter] = useState('All Projects');
   const [showAll, setShowAll] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('projects-section--visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   const showFeaturedProject = projectMatchesFilter(featuredProject, activeFilter);
   const visibleProjects = useMemo(
@@ -341,7 +362,7 @@ export function ProjectsSection() {
   }
 
   return (
-    <section className="projects-section" id="projects" aria-labelledby="projects-title">
+    <section className="projects-section" id="projects" aria-labelledby="projects-title" ref={sectionRef}>
       <div className="projects-heading">
         <p className="section-kicker">Projects</p>
         <h2 id="projects-title">Selected work shaped around practical product problems.</h2>
@@ -386,8 +407,8 @@ export function ProjectsSection() {
       )}
 
       <div className="project-compact-grid">
-        {displayedProjects.map((project) => (
-          <article className="compact-project" key={project.name}>
+        {displayedProjects.map((project, index) => (
+          <article className="compact-project" key={project.name} style={{ '--i': index }}>
             <h3>{project.name}</h3>
             <ProjectMeta domain={project.domain} date={project.date} />
             <ul className="project-bullets">

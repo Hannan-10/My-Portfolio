@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gmailIcon from '../../../assets/icons/gmail.svg';
 
 const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
@@ -13,6 +13,27 @@ export function ContactSection() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState({ type: 'idle', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('contact-form-section--visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
 
   function updateField(event) {
     const { name, value } = event.target;
@@ -64,7 +85,7 @@ export function ContactSection() {
   }
 
   return (
-    <section className="contact-form-section" id="contact" aria-labelledby="contact-form-title">
+    <section className="contact-form-section" id="contact" aria-labelledby="contact-form-title" ref={sectionRef}>
       <div className="contact-form-copy">
         <p className="section-kicker">Contact</p>
         <h2 id="contact-form-title">Book a session or send a message.</h2>

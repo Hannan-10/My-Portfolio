@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import awardIcon from '../../../assets/icons/award.svg';
 import calendarIcon from '../../../assets/icons/calendar.svg';
 import locationIcon from '../../../assets/icons/location.svg';
@@ -47,8 +47,30 @@ const educationItems = [
 ];
 
 export function EducationSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('education-section--visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="education-section" id="education" aria-labelledby="education-title">
+    <section className="education-section" id="education" aria-labelledby="education-title" ref={sectionRef}>
       <div className="education-heading">
         <p className="section-kicker">Education</p>
         <h2 id="education-title">Academic path that shaped the engineering base.</h2>

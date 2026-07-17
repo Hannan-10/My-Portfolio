@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import angularIcon from '../../../assets/icons/skill-angular.svg';
 import cssIcon from '../../../assets/icons/skill-css.svg';
 import dotnetIcon from '../../../assets/icons/skill-dotnet.svg';
@@ -56,6 +56,7 @@ const capabilityRings = [
 
 export function SkillsSection() {
   const [activeFilter, setActiveFilter] = useState('All Skills');
+  const sectionRef = useRef(null);
   const visibleSkills = useMemo(
     () =>
       activeFilter === 'All Skills'
@@ -64,8 +65,28 @@ export function SkillsSection() {
     [activeFilter],
   );
 
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('skills-section--visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="skills-section" id="skills" aria-labelledby="skills-title">
+    <section className="skills-section" id="skills" aria-labelledby="skills-title" ref={sectionRef}>
       <div className="skills-heading">
         <p className="section-kicker">Skills</p>
         <h2 id="skills-title">A focused toolbox for building useful products.</h2>
@@ -86,8 +107,8 @@ export function SkillsSection() {
 
       <div className="skills-layout">
         <div className="skill-card-grid">
-          {visibleSkills.map((skill) => (
-            <div className="skill-card" key={`${skill.category}-${skill.name}`}>
+          {visibleSkills.map((skill, index) => (
+            <div className="skill-card" key={`${skill.category}-${skill.name}`} style={{ '--i': index }}>
               <span className="skill-card-icon">
                 <img src={skill.icon} alt="" />
               </span>
@@ -101,7 +122,7 @@ export function SkillsSection() {
             <div
               className="capability-ring"
               key={item.label}
-              style={{ '--value': item.value }}
+              style={{ '--ring-target': item.value }}
             >
               <div className="ring-visual">
                 <span>{item.value}%</span>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import briefcaseIcon from '../../../assets/icons/briefcase.svg';
 import calendarIcon from '../../../assets/icons/calendar.svg';
 import glowingsoftLogo from '../../../assets/icons/glowingsoft.jpg';
@@ -167,6 +167,28 @@ const experienceGroups = [
 ];
 
 export function ExperienceSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('experience-section--visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   const renderPhotos = (group) => (
     <div className="experience-photo-slot" aria-label={`${group.company} image space`}>
       {group.photos.map((photo, photoIndex) => (
@@ -255,7 +277,7 @@ export function ExperienceSection() {
   );
 
   return (
-    <section className="experience-section" id="experience" aria-labelledby="experience-title">
+    <section className="experience-section" id="experience" aria-labelledby="experience-title" ref={sectionRef}>
       <div className="experience-heading">
         <p className="section-kicker">Experience</p>
         <h2 id="experience-title">A practical path through product engineering.</h2>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import resume from '../../../assets/documents/resume.pdf';
 import emailIcon from '../../../assets/icons/gmail.svg';
 import githubIcon from '../../../assets/icons/github.svg';
@@ -33,8 +33,30 @@ const contactLinks = [
 ];
 
 export function AboutSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const node = sectionRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('about-section--visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="about-section" id="about" aria-labelledby="about-title">
+    <section className="about-section" id="about" aria-labelledby="about-title" ref={sectionRef}>
       <div className="about-content">
         <div className="about-copy">
           <p className="section-kicker">About</p>
