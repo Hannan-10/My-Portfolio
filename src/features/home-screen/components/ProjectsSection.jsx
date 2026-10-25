@@ -66,7 +66,7 @@ const featuredProject = {
     'Flask',
   ],
   actions: [
-    { type: 'github', label: 'View GitHub', href: '#projects' },
+    { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Virtuel-Elegance---Final-Year-Project' },
     {
       type: 'linkedin',
       label: 'LinkedIn Post',
