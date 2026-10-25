@@ -12,6 +12,7 @@ import javaIcon from '../../../assets/icons/skill-java.svg';
 import mongoIcon from '../../../assets/icons/skill-mongodb.svg';
 import mysqlIcon from '../../../assets/icons/skill-mysql.svg';
 import nodeIcon from '../../../assets/icons/skill-node.svg';
+import postmanIcon from '../../../assets/icons/skill-postman.svg';
 import pythonIcon from '../../../assets/icons/skill-python.svg';
 import reactIcon from '../../../assets/icons/skill-react.svg';
 import systemIcon from '../../../assets/icons/skill-system.svg';
@@ -22,6 +23,7 @@ import cricketBazaarImage from '../../../assets/images/projects/Cricket Bazaar.p
 import editPixelImage from '../../../assets/images/projects/Edit Pixel.png';
 import gameBaaziImage from '../../../assets/images/projects/Game-Baazi.png';
 import jpegCompressionImage from '../../../assets/images/projects/JPEG Compression System.png';
+import skinAlystImage from '../../../assets/images/projects/Skin-Alyst.png';
 import speedifyImage from '../../../assets/images/projects/Speedify.png';
 import talentRankImage from '../../../assets/images/projects/TalentRank AI.png';
 import techHaveliImage from '../../../assets/images/projects/Tech-Haveli.png';
@@ -31,6 +33,7 @@ import wellSphereImage from '../../../assets/images/projects/Well Sphere.png';
 const techIcons = {
   Bootstrap: cssIcon,
   CSS: cssIcon,
+  Express: expressIcon,
   'Express.js': expressIcon,
   Flask: flaskIcon,
   GitHub: githubIcon,
@@ -39,6 +42,7 @@ const techIcons = {
   MongoDB: mongoIcon,
   MySQL: mysqlIcon,
   'Node.js': nodeIcon,
+  Postman: postmanIcon,
   Python: pythonIcon,
   React: reactIcon,
   'React.js': reactIcon,
@@ -143,6 +147,27 @@ const projects = [
         label: 'Demo Video',
         href: 'https://drive.google.com/file/d/1b2gUTpoJT5aRzfeG2yYtNl9j1JlOBLeh/view',
       },
+    ],
+  },
+  {
+    name: 'Skin Alyst',
+    image: skinAlystImage,
+    domain: 'AI Skincare Companion App',
+    date: '2026',
+    categories: ['AI Development', 'Mobile Development'],
+    description: [
+      'Developed a cross-platform (iOS & Android) skincare app using React Native, with an AI model that analyzes face photos to predict skin type (oily, dry, normal) and conditions such as acne, blackheads and dark spots.',
+      'Built personalized product recommendations based on skin type, detected conditions and allergy history, with usage reminders and a progress tracker that compares before-and-after skin scans.',
+      'Integrated a dermatologist referral feature that suggests nearby clinics when no improvement is detected after a week, backed by a Node.js/Express API, a Flask model service and Firebase.',
+    ],
+    technologies: ['React Native', 'Node.js', 'Express', 'Firebase', 'Python', 'Flask', 'Postman'],
+    actions: [
+      {
+        type: 'drive',
+        label: 'Demo Video',
+        href: 'https://drive.google.com/file/d/1yo7jkoy_4yDE1sjjfBb7wYMrxMp7cepH/view',
+      },
+      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Skin-Recommendation-System' },
     ],
   },
   {
