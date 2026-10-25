@@ -16,6 +16,17 @@ import pythonIcon from '../../../assets/icons/skill-python.svg';
 import reactIcon from '../../../assets/icons/skill-react.svg';
 import systemIcon from '../../../assets/icons/skill-system.svg';
 import fypImage from '../../../assets/images/projects/FYP.jpeg';
+import bijliSenseImage from '../../../assets/images/projects/Bijlee Sense.png';
+import chatbotImage from '../../../assets/images/projects/Chatbot for Healthcare Queries.png';
+import cricketBazaarImage from '../../../assets/images/projects/Cricket Bazaar.png';
+import editPixelImage from '../../../assets/images/projects/Edit Pixel.png';
+import gameBaaziImage from '../../../assets/images/projects/Game-Baazi.png';
+import jpegCompressionImage from '../../../assets/images/projects/JPEG Compression System.png';
+import speedifyImage from '../../../assets/images/projects/Speedify.png';
+import talentRankImage from '../../../assets/images/projects/TalentRank AI.png';
+import techHaveliImage from '../../../assets/images/projects/Tech-Haveli.png';
+import vitalSignsImage from '../../../assets/images/projects/Vital-signs.png';
+import wellSphereImage from '../../../assets/images/projects/Well Sphere.png';
 
 const techIcons = {
   Bootstrap: cssIcon,
@@ -78,6 +89,7 @@ const featuredProject = {
 const projects = [
   {
     name: 'Well Sphere',
+    image: wellSphereImage,
     domain: 'Talent & Recruitment Platform',
     date: 'Mar 2026 - May 2026',
     categories: ['Web Stack'],
@@ -94,6 +106,7 @@ const projects = [
   },
   {
     name: 'TalentRank AI',
+    image: talentRankImage,
     domain: 'Smart Recruitment System',
     date: 'Feb 2026 - Mar 2026',
     categories: ['AI Development', 'Web Stack'],
@@ -114,6 +127,7 @@ const projects = [
   },
   {
     name: 'Vital Signs',
+    image: vitalSignsImage,
     domain: 'AI-Enabled Connected Health Monitoring Application',
     date: 'Jan 2026 - Mar 2026',
     categories: ['AI Development', 'Mobile Development'],
@@ -132,7 +146,43 @@ const projects = [
     ],
   },
   {
+    name: 'GameBaazi',
+    image: gameBaaziImage,
+    domain: 'Online GameStore',
+    date: '2025',
+    categories: ['Web Stack'],
+    description: [
+      'Built a full-stack MERN platform for digital game and accessory sales with secure transactions and personalized user dashboards.',
+      'Integrated real-time order tracking and seamless delivery workflows for both digital downloads and physical products.',
+    ],
+    technologies: ['React.js', 'MongoDB', 'Express.js', 'Node.js'],
+    actions: [
+      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Game-Baazi' },
+      {
+        type: 'linkedin',
+        label: 'LinkedIn Post',
+        href: 'https://www.linkedin.com/posts/muhammad-hammad-69aa36248_reactjs-nodejs-fullstackdevelopment-activity-7287887324707704834-9a5F?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0kn0MB9Jn9CJa1us02Vx4e94Ohq14elRk',
+      },
+    ],
+  },
+  {
+    name: 'Chatbot for Healthcare Queries',
+    image: chatbotImage,
+    domain: 'Healthcare AI',
+    date: '2025',
+    categories: ['AI Development'],
+    description: [
+      'Designed and implemented an advanced NLP-based chatbot utilizing Retrieval-Augmented Generation to deliver precise and trustworthy medical responses.',
+      'Integrated document retrieval with context-aware generation, ensuring accurate and relevant healthcare guidance for users.',
+    ],
+    technologies: ['Python', 'spaCy', 'NLTK', 'Flask', 'React'],
+    actions: [
+      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Chatbot-for-Healthcare-Queries' },
+    ],
+  },
+  {
     name: 'TechHaveli',
+    image: techHaveliImage,
     domain: 'E-commerce Application',
     date: 'Dec 2025 - Jan 2026',
     categories: ['Web Stack'],
@@ -152,83 +202,8 @@ const projects = [
     ],
   },
   {
-    name: 'Chatbot for Healthcare Queries',
-    domain: 'Healthcare AI',
-    date: '2025',
-    categories: ['AI Development'],
-    description: [
-      'Designed and implemented an advanced NLP-based chatbot utilizing Retrieval-Augmented Generation to deliver precise and trustworthy medical responses.',
-      'Integrated document retrieval with context-aware generation, ensuring accurate and relevant healthcare guidance for users.',
-    ],
-    technologies: ['Python', 'spaCy', 'NLTK', 'Flask', 'React'],
-    actions: [
-      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Chatbot-for-Healthcare-Queries' },
-    ],
-  },
-  {
-    name: 'GameBaazi',
-    domain: 'Online GameStore',
-    date: '2025',
-    categories: ['Web Stack'],
-    description: [
-      'Built a full-stack MERN platform for digital game and accessory sales with secure transactions and personalized user dashboards.',
-      'Integrated real-time order tracking and seamless delivery workflows for both digital downloads and physical products.',
-    ],
-    technologies: ['React.js', 'MongoDB', 'Express.js', 'Node.js'],
-    actions: [
-      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Game-Baazi' },
-      {
-        type: 'linkedin',
-        label: 'LinkedIn Post',
-        href: 'https://www.linkedin.com/posts/muhammad-hammad-69aa36248_reactjs-nodejs-fullstackdevelopment-activity-7287887324707704834-9a5F?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0kn0MB9Jn9CJa1us02Vx4e94Ohq14elRk',
-      },
-    ],
-  },
-  {
-    name: 'Cricket Bazaar',
-    domain: 'Cricket Analytics Platform',
-    date: '2024',
-    categories: ['AI Development', 'Web Stack'],
-    description: [
-      'Developed predictive models using regression and classification to estimate IPL auction prices based on historical player data.',
-      'Integrated the models into a responsive web app for interactive visualization and exploration of player insights and auction trends.',
-    ],
-    technologies: ['Python', 'Flask', 'HTML', 'CSS', 'Bootstrap'],
-    actions: [
-      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Cricket-Bazar' },
-    ],
-  },
-  {
-    name: 'Billee Sense',
-    domain: 'Energy Consumption Analysis',
-    date: '2024',
-    categories: ['AI Development'],
-    description: [
-      'Built a predictive energy management system using Linear Regression and Neural Networks to forecast consumption patterns.',
-      'Implemented data preprocessing, clustering, and interactive visualizations for data-driven energy optimization.',
-    ],
-    technologies: ['Python', 'HTML', 'CSS', 'GitHub'],
-    actions: [
-      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/AI-Project-Energy-Consumption' },
-    ],
-  },
-  {
-    name: 'Edit Pixel',
-    domain: 'Image Editor Mobile App',
-    date: '2024',
-    categories: ['Mobile Development'],
-    description: [
-      'Developed a mobile image editor app using Kotlin and Jetpack Compose.',
-      'Included real-time filters, cropping, and enhancement tools with responsive UI behavior.',
-      'Focused on smooth performance and an intuitive editing experience.',
-    ],
-    technologies: ['Kotlin', 'Jetpack Compose', 'Jira', 'GitHub', 'Figma'],
-    actions: [
-      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Edit-Pixel---Android-Application' },
-    ],
-  },
-  {
     name: 'Speedify',
+    image: speedifyImage,
     domain: 'Courier Management System - CMS',
     date: '2023',
     categories: ['Desktop Apps'],
@@ -243,7 +218,54 @@ const projects = [
     ],
   },
   {
+    name: 'Bijli Sense',
+    image: bijliSenseImage,
+    domain: 'Energy Consumption Analysis',
+    date: '2024',
+    categories: ['AI Development'],
+    description: [
+      'Built a predictive energy management system using Linear Regression and Neural Networks to forecast consumption patterns.',
+      'Implemented data preprocessing, clustering, and interactive visualizations for data-driven energy optimization.',
+    ],
+    technologies: ['Python', 'HTML', 'CSS', 'GitHub'],
+    actions: [
+      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/AI-Project-Energy-Consumption' },
+    ],
+  },
+  {
+    name: 'Edit Pixel',
+    image: editPixelImage,
+    domain: 'Image Editor Mobile App',
+    date: '2024',
+    categories: ['Mobile Development'],
+    description: [
+      'Developed a mobile image editor app using Kotlin and Jetpack Compose.',
+      'Included real-time filters, cropping, and enhancement tools with responsive UI behavior.',
+      'Focused on smooth performance and an intuitive editing experience.',
+    ],
+    technologies: ['Kotlin', 'Jetpack Compose', 'Jira', 'GitHub', 'Figma'],
+    actions: [
+      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Edit-Pixel---Android-Application' },
+    ],
+  },
+  {
+    name: 'Cricket Bazaar',
+    image: cricketBazaarImage,
+    domain: 'Cricket Analytics Platform',
+    date: '2024',
+    categories: ['AI Development', 'Web Stack'],
+    description: [
+      'Developed predictive models using regression and classification to estimate IPL auction prices based on historical player data.',
+      'Integrated the models into a responsive web app for interactive visualization and exploration of player insights and auction trends.',
+    ],
+    technologies: ['Python', 'Flask', 'HTML', 'CSS', 'Bootstrap'],
+    actions: [
+      { type: 'github', label: 'View GitHub', href: 'https://github.com/Hannan-10/Cricket-Bazar' },
+    ],
+  },
+  {
     name: 'JPEG Compression System',
+    image: jpegCompressionImage,
     domain: 'Digital Image Processing Project',
     date: '2023',
     categories: ['AI Development'],
@@ -409,18 +431,27 @@ export function ProjectsSection() {
       <div className="project-compact-grid">
         {displayedProjects.map((project, index) => (
           <article className="compact-project" key={project.name} style={{ '--i': index }}>
-            <h3>{project.name}</h3>
-            <ProjectMeta domain={project.domain} date={project.date} />
-            <ul className="project-bullets">
-              {project.description.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <div className="project-tech-block">
-              <p>Technologies</p>
-              <TechStack technologies={project.technologies} />
+            <div className={`compact-project-media${project.image ? '' : ' is-placeholder'}`}>
+              {project.image ? (
+                <img src={project.image} alt={`${project.name} project preview`} loading="lazy" />
+              ) : (
+                <div className="compact-project-cover" aria-hidden="true">
+                  <span>{project.domain}</span>
+                  <strong>{project.name}</strong>
+                </div>
+              )}
             </div>
-            <ProjectActions project={project} />
+            <div className="compact-project-body">
+              <h3>{project.name}</h3>
+              <ProjectMeta domain={project.domain} date={project.date} />
+              <TechStack technologies={project.technologies} />
+              <ul className="project-bullets">
+                {project.description.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <ProjectActions project={project} />
+            </div>
           </article>
         ))}
       </div>
